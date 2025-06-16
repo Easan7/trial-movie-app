@@ -4,6 +4,7 @@ import Search from './components/Search.tsx';
 import CircularProgress from '@mui/material/CircularProgress';
 import {useDebounce} from 'react-use';
 
+
 const API_BASE_URL = 'https://api.themoviedb.org/3';
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY
 
@@ -43,6 +44,8 @@ const App = () => {
         return;
       }
       setMovieList(data.results || []);
+
+    
     } catch (error) {
       console.error('Error fetching movies:', error);
       setErrorMessage('Failed to fetch movies. Please try again later.');
